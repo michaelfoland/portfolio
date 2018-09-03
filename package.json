@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-3",
+  "version": "1.0.0",
+  "description": "A redesign of the concept for my portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Foland",
+  "license": "ISC"
+}
