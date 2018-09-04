@@ -1,4 +1,6 @@
 :root {
-  --button-container-height: calc(40px + 10vmin);
+  --button-height: calc(40px + 10vmin);
   --button-heading-width: 10rem;
+  --circle-transition-duration: 300ms;
+  --heading-transition-duration: 500ms;
 }

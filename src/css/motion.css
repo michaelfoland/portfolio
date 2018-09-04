@@ -1,0 +1,9 @@
+.nav__button-circle {
+  transition: margin var(--circle-transition-duration) 0ms ease,
+    width var(--circle-transition-duration) 0ms ease,
+    height var(--circle-transition-duration) 0ms ease;
+}
+
+.nav__button-heading {
+  transition: transform var(--heading-transition-duration) 0ms ease;
+}

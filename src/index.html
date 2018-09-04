@@ -7,42 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/vars.css">
     <link rel="stylesheet" href="./css/resets.css">
+    <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/motion.css">    
   </head>
   <body>
     <header></header>
     <main id="main" class="main">
       <nav id="navbar" class="nav nav--centered">
         <ul class="nav__list">
-          <li class="nav__item" id="portfolio-link">
-            <div class="nav__button-container">
-              <button class="nav__button">
-              </button>
-            </div>
+          <li class="nav__item" id="portfolio-link" data-location="topleft">
+            <button class="nav__button">
+              <span class="nav__button-circle"></span>
+            </button>
             <span class="nav__button-heading"></span>
           </li>
         
-          <li class="nav__item" id="about-link">
-            <div class="nav__button-container">
-              <button class="nav__button">
-              </button>
-            </div>
+          <li class="nav__item" id="about-link" data-location="topright">
+            <button class="nav__button">
+              <span class="nav__button-circle"></span>
+            </button>
             <span class="nav__button-heading"></span>
           </li>
 
-          <li class="nav__item" id="contact-link">
-            <div class="nav__button-container">
-              <button class="nav__button">
-              </button>
-            </div>
+          <li class="nav__item" id="contact-link" data-location="bottomleft">
+            <button class="nav__button">
+              <span class="nav__button-circle"></span>
+            </button>
             <span class="nav__button-heading"></span>
           </li>
           
-          <li class="nav__item" id="blog-link">
-            <div class="nav__button-container">
-              <button class="nav__button">
-              </button>
-            </div>
+          <li class="nav__item" id="blog-link" data-location="bottomright">
+            <button class="nav__button">
+              <span class="nav__button-circle"></span>
+            </button>
             <span class="nav__button-heading"></span>
           </li>
         </ul>
@@ -52,6 +50,6 @@
         <!-- the content sections related to each of the menu items will live here --> 
       </div>
     </main>
-    <script></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

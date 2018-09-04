@@ -2,40 +2,43 @@
 === DEV BORDERS ===
 ================ */
 
+/*
 body {
-  border: solid 1px red;
+  border: solid 2px red;
   box-sizing: border-box;
 }
 header {
-  border: solid 1px orange;
+  border: solid 2px orange;
   box-sizing: border-box;
 }
 .main {
-  border: solid 1px yellow;
+  border: solid 2px yellow;
   box-sizing: border-box;
 }
+*/
 .nav {
-  border: solid 1px green;
+  border: solid 2px green;
   box-sizing: border-box;
 }
+/*
 .nav__item {
-  border: solid 1px blue;
+  border: solid 2px blue;
   box-sizing: border-box;
 }
-.nav__button-container {
-  border: solid 1px purple;
-  box-sizing: border-box;
-}
-
 .nav__button {
-  border: solid 1px pink;
+  border: solid 2px purple;
+  box-sizing: border-box;
+}
+*/
+.nav__button-circle {
+  border: solid 2px pink;
+  box-sizing: border-box;
+}
+.nav__button-heading {
+  border: solid 2px brown;
   box-sizing: border-box;
 }
 
-.nav__button-heading {
-  border: solid 1px brown;
-  box-sizing: border-box;
-}
 
 /* ====================
 === END DEV BORDERS ===
@@ -71,23 +74,23 @@ main {
 
 @media (min-width: 600px), (orientation: landscape) {
   .nav--centered {
-    height: calc(2 * var(--button-container-height));
+    height: calc(2 * var(--button-height));
     width: calc(
-      2 * (var(--button-container-height) + var(--button-heading-width))
+      2 * (var(--button-height) + var(--button-heading-width))
     );
     left: calc(
-      50% - var(--button-container-height) - var(--button-heading-width)
+      50% - var(--button-height) - var(--button-heading-width)
     );
-    top: calc(50% - var(--button-container-height));
+    top: calc(50% - var(--button-height));
   }
 }
 
 @media (max-width: 599px) and (orientation: portrait) {
   .nav--centered {
-    height: calc(4 * var(--button-container-height));
+    height: calc(4 * var(--button-height));
     width: calc(2 * var(--button-heading-width));
     left: calc(50% - var(--button-heading-width));
-    top: calc(25% - var(--button-container-height));
+    top: calc(25% - var(--button-height));
   }
 }
 
@@ -169,46 +172,63 @@ main {
   left: 50%;
 }
 
-/* ==========================
-=== NAV__BUTTON-CONTAINER ===
-========================== */
-
-.nav__button-container {
-  position: relative;
-}
-
-.nav--centered .nav__button-container {
-  height: var(--button-container-height);
-  width: var(--button-container-height);
-}
-
 /* ================
 === NAV__BUTTON ===
 ================ */
 
 .nav__button {
-  position: absolute;
+ 
+}
+
+.nav--centered .nav__button {
+  height: var(--button-height);
+  width: var(--button-height);
+}
+
+/* =======================
+=== NAV__BUTTON-CIRCLE ===
+======================= */
+
+.nav__button-circle {
+  display: inline-block;
   border-radius: 50%;
 }
 
 /* NOT SURE ABOUT DOING IT THIS WAY */
-.nav--centered:not(.nav--highlighted) .nav__button {
+.nav--centered:not(.nav--highlighted) .nav__button-circle {
   width: 70%;
   height: 70%;
-  margin: 15% 0 0 15%;
+  margin: 15%;
 }
 
-.nav--centered.nav--highlighted .nav__button.nav__button--highlighted {
+.nav--centered.nav--highlighted .nav__item--highlighted .nav__button-circle {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.nav--centered.nav--highlighted .nav__button:not(.nav__button--highlighted) {
+.nav--centered.nav--highlighted .nav__item:not(.nav__item--highlighted) .nav__button-circle {
   width: 50%;
   height: 50%;
-  margin: 25% 0 0 25%;
+  /* margin: 25%;  NOT NECESSARY, B/C APPROPRIATE MARGINS ADDED BY OTHER CLASSES */
 }
+
+.nav__button-circle.up-left {
+  margin: 10% 40% 40% 10%;
+}
+
+.nav__button-circle.up-right {
+  margin: 10% 10% 40% 40%;
+}
+
+.nav__button-circle.down-left {
+  margin: 40% 40% 10% 10%;
+}
+
+.nav__button-circle.down-right {
+  margin: 40% 10% 10% 40%;
+}
+
 
 /* ========================
 === NAV__BUTTON-HEADING ===
@@ -217,4 +237,16 @@ main {
 .nav__button-heading {
   display: inline-block; /* or block? */
   width: var(--button-heading-width);
+}
+
+.nav--centered .nav__item:nth-of-type(2n + 1):not(.nav__item--highlighted) .nav__button-heading {
+  transform: translateX(-50vw);
+}
+
+.nav--centered .nav__item:nth-of-type(2n):not(.nav__item--highlighted) .nav__button-heading {
+  transform: translateX(50vw);  
+}
+
+.nav--centered .nav__item.nav__item--highlighted .nav__button-heading {
+  transform: translateX(0);
 }
