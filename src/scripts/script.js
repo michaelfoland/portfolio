@@ -23,6 +23,9 @@ buttonCircleClasses.set("bottomright", {
 });
 
 
+// Get ref to nav
+const nav = document.getElementById('navbar');
+
 // Attach listeners
 // .nav__button listeners
 let navButtons = Array.from(
@@ -34,6 +37,7 @@ navButtons.forEach(button => {
   button.addEventListener("focus", handleFocus);
   button.addEventListener("mouseleave", handleMouseLeave);
   button.addEventListener("blur",handleBlur);
+  button.addEventListener('click',handleClick);
 });
 
 // .nav__button-heading listeners
@@ -41,6 +45,7 @@ let navButtonHeadings = Array.from(document.querySelectorAll('.nav__button-headi
 
 navButtonHeadings.forEach(heading => {
   heading.addEventListener('mouseleave', handleMouseLeave);
+  heading.addEventListener('click',handleClick);
 })
 
 
@@ -55,9 +60,18 @@ function handleFocus(e) {
 
 function handleMouseEnterOrFocus(e) {
   // unhighlight any previously highlighted nav__item
-  removeAllHighlights();
+  // NOTE: This is necessary because the previously 
+  // highlighted nav__item might have been highlighted
+  // via different method (viz, focus vs. hover)
+  if (nav.classList.contains('nav--highlighted')) {
+    let highlightedNavItem = nav.querySelector('.nav__item--highlighted');    
     
-  let nav = document.getElementById("navbar");
+    if (e.target.closest('.nav__item') !== highlightedNavItem) {
+      console.log('calling removeAllHighlights()');
+      removeAllHighlights();
+    }
+  }
+        
   let navItem = e.target.closest(".nav__item");
 
   if (nav.classList.contains("nav--centered")) {
@@ -79,13 +93,14 @@ function handleMouseEnterOrFocus(e) {
   } else if (nav.classList.contains("nav--docked")) {
     // TODO: Apply appropriate button sizing changes
     // (no positioning changes here)
-    console.log("nav should be docked to top or right");
+    // Highlight nav and appropriate nav__item
+    nav.classList.add('nav--highlighted');
+    navItem.classList.add('nav__item--highlighted');
   }
 }
 
 
 function handleMouseLeave(e) {
-  let nav = document.getElementById('navbar');
   let currentNavItem = document.elementFromPoint(e.pageX, e.pageY).parentElement;
   let previousNavItem = e.target.closest('.nav__item');
   
@@ -115,7 +130,6 @@ function handleMouseLeave(e) {
 }
 
 function handleBlur(e) {
-  let nav = document.getElementById('navbar');
   if (nav.classList.contains('nav--centered')) {
     removeAllHighlights();
   } else if (nav.classList.contains('nav--docked')) {
@@ -124,7 +138,6 @@ function handleBlur(e) {
 }
 
 function removeAllHighlights() {
-  let nav = document.getElementById('navbar');
   nav.classList.remove('nav--highlighted');
   
   let highlightedItem = nav.querySelector('.nav__item--highlighted');
@@ -146,4 +159,28 @@ function removeAllHighlights() {
   } else {
     console.log('\tnothing to remove');
   }
+}
+
+
+function handleClick(e) {
+  console.log('click from',e.target.closest('.nav__item').dataset.location);
+  // remove --selected from any currently selected nav item
+  let currentlySelected = document.querySelector('.nav__item--selected');
+  if (currentlySelected) {
+    currentlySelected.classList.remove('nav__item--selected');
+  }
+  
+  // apply --selected to newly selected nav item
+  e.target.closest('.nav__item').classList.add('nav__item--selected');
+  
+  // apply appropriate changes if we're moving nav from centered to docked
+  if (nav.classList.contains('nav--centered')) {
+    removeAllHighlights();
+    dockNavbar();
+  }
+}
+
+function dockNavbar() {
+  nav.classList.remove('nav--centered');
+  nav.classList.add('nav--docked');
 }
