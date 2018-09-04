@@ -1,0 +1,4 @@
+:root {
+  --button-container-height: calc(40px + 10vmin);
+  --button-heading-width: 10rem;
+}
