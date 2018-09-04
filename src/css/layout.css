@@ -27,6 +27,20 @@ header {
   box-sizing: border-box;
 }
 
+.nav__button {
+  border: solid 1px pink;
+  box-sizing: border-box;
+}
+
+.nav__button-heading {
+  border: solid 1px brown;
+  box-sizing: border-box;
+}
+
+/* ====================
+=== END DEV BORDERS ===
+==================== */
+
 body {
   height: 100vh;
   width: 100vw;
@@ -159,7 +173,48 @@ main {
 === NAV__BUTTON-CONTAINER ===
 ========================== */
 
+.nav__button-container {
+  position: relative;
+}
+
 .nav--centered .nav__button-container {
   height: var(--button-container-height);
   width: var(--button-container-height);
+}
+
+/* ================
+=== NAV__BUTTON ===
+================ */
+
+.nav__button {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* NOT SURE ABOUT DOING IT THIS WAY */
+.nav--centered:not(.nav--highlighted) .nav__button {
+  width: 70%;
+  height: 70%;
+  margin: 15% 0 0 15%;
+}
+
+.nav--centered.nav--highlighted .nav__button.nav__button--highlighted {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.nav--centered.nav--highlighted .nav__button:not(.nav__button--highlighted) {
+  width: 50%;
+  height: 50%;
+  margin: 25% 0 0 25%;
+}
+
+/* ========================
+=== NAV__BUTTON-HEADING ===
+======================== */
+
+.nav__button-heading {
+  display: inline-block; /* or block? */
+  width: var(--button-heading-width);
 }
