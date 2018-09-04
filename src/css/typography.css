@@ -1,12 +1,19 @@
+html {
+  font-family: "Segoe UI Semilight", sans-serif;
+}
+
+span {
+}
+
 @media (min-width: 900px) {
   html {
-    font-size: 150%;
+    font-size: 170%;
   }
 }
 
 @media (min-width: 600px) and (max-width: 899px) {
   html {
-    font-size: 120%;
+    font-size: 135%;
   }
 }
 

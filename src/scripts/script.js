@@ -51,6 +51,7 @@ navButtonHeadings.forEach(heading => {
 
 // Add behavior for when button and (subsequently) button-heading are hovered OR focused
 function handleMouseEnter(e) {
+  if (nav.classList.contains('nav--transition')) return; // don't handle mouse events while nav is transitioning
   handleMouseEnterOrFocus(e);
 }
 
@@ -161,10 +162,8 @@ function removeAllHighlights() {
   }
 }
 
-
 function handleClick(e) {
-  console.log('click from',e.target.closest('.nav__item').dataset.location);
-  // remove --selected from any currently selected nav item
+   // remove --selected from any currently selected nav item
   let currentlySelected = document.querySelector('.nav__item--selected');
   if (currentlySelected) {
     currentlySelected.classList.remove('nav__item--selected');
@@ -177,10 +176,20 @@ function handleClick(e) {
   if (nav.classList.contains('nav--centered')) {
     removeAllHighlights();
     dockNavbar();
+    temporarilyHideButtonHeading();
   }
 }
 
 function dockNavbar() {
   nav.classList.remove('nav--centered');
   nav.classList.add('nav--docked');
+}
+
+function temporarilyHideButtonHeading() {
+  nav.classList.add('nav--transition');
+  
+  setTimeout(() => {
+    nav.classList.remove('nav--transition');
+  }, 500);
+  
 }

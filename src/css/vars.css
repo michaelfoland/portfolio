@@ -1,7 +1,46 @@
 :root {
-  --button-height: calc(40px + 10vmin);
-  --button-heading-width: 10rem;
-  --circle-transition-duration: 300ms;
+  /* ==========
+  === SIZES ===
+  ========== */
+  --centered-button-height: calc(40px + 10vmin);
+  --docked-button-height: calc(25px + 5vmin);
+  --button-heading-width: 12rem;
+  --centered-button-heading-height: calc(var(--centered-button-height) * .75);
+  --docked-button-heading-height: calc(var(--docked-button-height) * .75);
+  --top-docked-button-heading-width: 6rem;
+
+  /* ================
+  === TRANSITIONS ===
+  ================ */
+  --circle-transition-duration: 500ms;
   --heading-transition-duration: 500ms;
   --nav-transition-duration: 500ms;
+  --docked-circle-transition: 300ms;
+
+  /* ===========
+  === COLORS ===
+  =========== */
+  --color-1-xlt: #28784d;
+  --color-1-lt: #67aa86;
+  --color-1-md: #449168;
+  --color-1-dk: #135f36;
+  --color-1-xdk: #054623;
+  --color-2-xlt: #255e69;
+  --color-2-lt: #5b8b94;
+  --color-2-md: #3d747f;
+  --color-2-dk: #124953;
+  --color-2-xdk: #05343d;
+  --color-3-xlt: #aa7039;
+  --color-3-lt: #f1c091;
+  --color-3-md: #cd9660;
+  --color-3-dk: #874f1b;
+  --color-3-xdk: #633406;
+  --color-4-xlt: #aa5239;
+  --color-4-lt: #f1a791;
+  --color-4-md: #cd7960;
+  --color-4-dk: #87331b;
+  --color-4-xdk: #631b06;
+
+  --top-docked-margin-ratio: 1.75;
+  --right-docked-margin-ratio: 1.25;
 }

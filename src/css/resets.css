@@ -2,12 +2,26 @@ body {
   margin: 0;
 }
 
+nav,
+ul,
+li {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 ul {
   list-style: none;
+  border: none;
+}
+
+li {
+  border: none;
 }
 
 button {
   border: none;
   padding: 0;
   margin: 0;
+  background: none;
 }
