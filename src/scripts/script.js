@@ -127,14 +127,21 @@ function handleMouseLeave(e) {
     }
   } else if (nav.classList.contains('nav--docked')) {
     // TODO: implement button behavior when nav is docked
+    nav.classList.remove('nav--highlighted');
+    previousNavItem.classList.remove('nav__item--highlighted');
   }
 }
 
 function handleBlur(e) {
   if (nav.classList.contains('nav--centered')) {
-    removeAllHighlights();
+    removeAllHighlights(); // This method is not well-named, since it only works when nav is centered
   } else if (nav.classList.contains('nav--docked')) {
+    console.log('in else-if of handleBllur()');
     // TODO: implement button behavior when nav is docked
+    console.log('\tnav.classList =',nav.classList);
+    console.log('\te.target.classList =',e.target.classList);
+    nav.classList.remove('nav--highlighted');
+    e.target.closest('.nav__item').classList.remove('nav__item--highlighted');
   }
 }
 

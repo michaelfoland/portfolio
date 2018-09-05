@@ -67,7 +67,6 @@ header {
 
 */
 
-
 /* ====================
 === END DEV BORDERS ===
 ==================== */
@@ -132,11 +131,15 @@ main {
 
   /* this is docked at the TOP */
   .nav--docked {
-    width: calc(4 * var(--docked-button-height) * var(--top-docked-margin-ratio));
+    width: calc(
+      4 * var(--docked-button-height) * var(--top-docked-margin-ratio)
+    );
     height: var(--docked-button-height); /* this is wrong */
     padding: 1vmin;
     top: 0;
-    right: calc(50% - (2 * var(--docked-button-height) * var(--top-docked-margin-ratio)));
+    right: calc(
+      50% - (2 * var(--docked-button-height) * var(--top-docked-margin-ratio))
+    );
   }
 }
 
@@ -152,7 +155,9 @@ main {
 @media (min-width: 600px), (orientation: landscape) {
   .nav--docked .nav__item {
     height: calc(var(--docked-button-height) * 1.1);
-    width: calc(var(--docked-button-height) + var(--top-docked-button-heading-width));
+    width: calc(
+      var(--docked-button-height) + var(--top-docked-button-heading-width)
+    );
     right: 0;
   }
 
@@ -165,18 +170,24 @@ main {
   }
 
   .nav--docked .nav__item:nth-of-type(3) {
-    top: calc(var(--docked-button-height) * var(--right-docked-margin-ratio) * 2);
+    top: calc(
+      var(--docked-button-height) * var(--right-docked-margin-ratio) * 2
+    );
   }
 
   .nav--docked .nav__item:nth-of-type(4) {
-    top: calc(var(--docked-button-height) * var(--right-docked-margin-ratio) * 3);
+    top: calc(
+      var(--docked-button-height) * var(--right-docked-margin-ratio) * 3
+    );
   }
 }
 
 @media (max-width: 599px) and (orientation: portrait) {
   .nav--docked .nav__item {
     width: calc(var(--docked-button-height) * var(--top-docked-margin-ratio));
-    height: calc(var(--docked-button-height) + var(--docked-button-heading-height));
+    height: calc(
+      var(--docked-button-height) + var(--docked-button-heading-height)
+    );
   }
 
   .nav--docked .nav__item {
@@ -184,15 +195,21 @@ main {
   }
 
   .nav--docked .nav__item:nth-of-type(1) {
-    right: calc(var(--docked-button-height) * var(--top-docked-margin-ratio) * 3);
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 3
+    );
   }
 
   .nav--docked .nav__item:nth-of-type(2) {
-    right: calc(var(--docked-button-height) * var(--top-docked-margin-ratio) * 2);
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 2
+    );
   }
 
   .nav--docked .nav__item:nth-of-type(3) {
-    right: calc(var(--docked-button-height) * var(--top-docked-margin-ratio) * 1);
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 1
+    );
   }
 
   .nav--docked .nav__item:nth-of-type(4) {
@@ -241,7 +258,9 @@ main {
   }
 
   .nav--centered .nav__item:nth-of-type(2n) .nav__button {
-    right: var(--button-heading-width); /* recalculate as right, if necessary for smooth transitions */
+    right: var(
+      --button-heading-width
+    ); /* recalculate as right, if necessary for smooth transitions */
   }
 
   .nav--docked .nav__button {
@@ -254,22 +273,22 @@ main {
     right: 0;
     top: var(--centered-button-height);
   }
-  
+
   .nav--centered .nav__item:nth-of-type(2) .nav__button {
     right: calc(var(--button-heading-width) - var(--centered-button-height));
     top: var(--centered-button-height);
   }
-  
+
   .nav--centered .nav__item:nth-of-type(3) .nav__button {
     right: 0;
     top: 0;
   }
-  
+
   .nav--centered .nav__item:nth-of-type(4) .nav__button {
     right: calc(var(--button-heading-width) - var(--centered-button-height));
     top: 0;
-  }  
-  
+  }
+
   .nav--docked .nav__button {
     top: 0;
     right: calc((100% - var(--docked-button-height)) / 2);
@@ -386,10 +405,12 @@ main {
   .nav--centered .nav__item:nth-of-type(2) .nav__button-heading {
     top: 0;
   }
-  
+
   .nav--centered .nav__item:nth-of-type(3) .nav__button-heading,
   .nav--centered .nav__item:nth-of-type(4) .nav__button-heading {
-    top: calc(var(--centered-button-height) - var(--centered-button-heading-height));
+    top: calc(
+      var(--centered-button-height) - var(--centered-button-heading-height)
+    );
   }
 
   .nav--docked .nav__button-heading {
@@ -403,21 +424,27 @@ main {
   .nav--centered .nav__item:nth-of-type(1) .nav__button-heading,
   .nav--centered .nav__item:nth-of-type(2) .nav__button-heading {
     right: 0;
-    top: calc(var(--centered-button-height) - var(--centered-button-heading-height));
+    top: calc(
+      var(--centered-button-height) - var(--centered-button-heading-height)
+    );
   }
-  
+
   .nav--centered .nav__item:nth-of-type(3) .nav__button-heading,
   .nav--centered .nav__item:nth-of-type(4) .nav__button-heading {
     right: 0;
     top: var(--centered-button-height);
   }
-  
+
   .nav--docked .nav__button-heading {
     top: var(--docked-button-height);
-    right: calc(((var(--docked-button-height) * var(--top-docked-margin-ratio)) - var(--top-docked-button-heading-width)) / 2);
+    right: calc(
+      (
+          (var(--docked-button-height) * var(--top-docked-margin-ratio)) -
+            var(--top-docked-button-heading-width)
+        ) / 2
+    );
     width: var(--top-docked-button-heading-width);
   }
-  
 }
 
 .nav__button-heading {
@@ -500,4 +527,62 @@ main {
 
 .nav__item:nth-of-type(4) .nav__button-heading {
   color: var(--color-4-dk);
+}
+
+/* ===========
+=== HEADER ===
+=========== */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+  width: 80%;
+}
+
+@media (max-width: 599px) {
+  width: 100%;
+}
+
+header > span {
+  margin: 0 2rem;
+}
+.name {
+  font-size: 2rem;
+  color: #333;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-2rem);
+  animation-name: dropInAndAppear;
+  animation-delay: 2000ms;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #555;
+  /* text-shadow: 1px 1px 2px #777; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  opacity: 0;
+  transform: translateY(-2rem);
+  animation-name: dropInAndAppear;
+  animation-delay: 2500ms;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
 }

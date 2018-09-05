@@ -2,7 +2,7 @@
   /* ==========
   === SIZES ===
   ========== */
-  --centered-button-height: calc(40px + 10vmin);
+  --centered-button-height: calc(50px + 10vmin);
   --docked-button-height: calc(25px + 5vmin);
   --button-heading-width: 12rem;
   --centered-button-heading-height: calc(var(--centered-button-height) * .75);
