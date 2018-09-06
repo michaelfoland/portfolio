@@ -25,28 +25,41 @@ buttonCircleClasses.set("bottomright", {
 // Get ref to nav
 const nav = document.getElementById("navbar");
 
-// Attach listeners
-// .nav__button listeners
-let navButtons = Array.from(document.querySelectorAll(".nav__button"));
+// This doesn't seem like the greatest implementation
+nav.addEventListener('animationend', attachListenersAfterIntro);
 
-navButtons.forEach(button => {
-  button.addEventListener("mouseenter", handleMouseEnter);
-  button.addEventListener("focus", handleFocus);
-  button.addEventListener("mouseleave", handleMouseLeave);
-  button.addEventListener("blur", handleBlur);
-  button.addEventListener("click", handleClick);
-  button.addEventListener("touchstart", handleTouchStart);
-});
+function attachListenersAfterIntro(e) {
+  if (e.target.classList.contains('nav')) {
+    attachListeners();
+    nav.removeEventListener('animationend',attachListenersAfterIntro);
+  }
+}
 
-// .nav__button-heading listeners
-let navButtonHeadings = Array.from(
-  document.querySelectorAll(".nav__button-heading")
-);
 
-navButtonHeadings.forEach(heading => {
-  heading.addEventListener("mouseleave", handleMouseLeave);
-  heading.addEventListener("click", handleClick);
-});
+// Attach listeners (called after initial animations complete)
+function attachListeners() {
+  // .nav__button listeners
+  let navButtons = Array.from(document.querySelectorAll(".nav__button"));
+
+  navButtons.forEach(button => {
+    button.addEventListener("mouseenter", handleMouseEnter);
+    button.addEventListener("focus", handleFocus);
+    button.addEventListener("mouseleave", handleMouseLeave);
+    button.addEventListener("blur", handleBlur);
+    button.addEventListener("click", handleClick);
+    button.addEventListener("touchstart", handleTouchStart);
+  });
+
+  // .nav__button-heading listeners
+  let navButtonHeadings = Array.from(
+    document.querySelectorAll(".nav__button-heading")
+  );
+
+  navButtonHeadings.forEach(heading => {
+    heading.addEventListener("mouseleave", handleMouseLeave);
+    heading.addEventListener("click", handleClick);
+  });
+}
 
 // Add behavior for when button and (subsequently) button-heading are hovered OR focused
 function handleMouseEnter(e) {
