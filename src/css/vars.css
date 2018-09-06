@@ -2,20 +2,21 @@
   /* ==========
   === SIZES ===
   ========== */
-  --centered-button-height: calc(50px + 10vmin);
-  --docked-button-height: calc(25px + 5vmin);
+  --centered-button-height: calc(3rem + 10vmin);
+  --docked-button-height: calc(1.5rem + 5vmin);
   --button-heading-width: 12rem;
-  --centered-button-heading-height: calc(var(--centered-button-height) * .75);
-  --docked-button-heading-height: calc(var(--docked-button-height) * .75);
+  --centered-button-heading-height: calc(var(--centered-button-height) * 0.75);
+  --docked-button-heading-height: calc(var(--docked-button-height) * 0.75);
   --top-docked-button-heading-width: 6rem;
-
+  --top-docked-nav-height: calc(var(--docked-button-height) + var(--docked-button-heading-height)); 
+  --right-docked-nav-width: calc(var(--docked-button-height) + var(--top-docked-button-heading-width));
   /* ================
   === TRANSITIONS ===
   ================ */
   --circle-transition-duration: 500ms;
   --heading-transition-duration: 500ms;
   --nav-transition-duration: 500ms;
-  --docked-circle-transition: 300ms;
+  --docked-circle-transition: 180ms;
 
   /* ===========
   === COLORS ===

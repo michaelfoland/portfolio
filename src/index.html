@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/motion.css">    
+    <link rel="stylesheet" href="./css/header.css">    
+    <link rel="stylesheet" href="./css/nav.css">    
+    <link rel="stylesheet" href="./css/navitem.css">    
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/devborders.css">        
   </head>
   <body>
     <header>
@@ -23,28 +28,28 @@
     <main id="main" class="main">
       <nav id="navbar" class="nav nav--centered">
         <ul class="nav__list">
-          <li class="nav__item" id="portfolio-link" data-location="topleft">
+          <li class="nav__item" id="portfolio-link" data-location="topleft" data-target="portfolio-content">
             <button class="nav__button">
               <span class="nav__button-circle"></span>
             </button>
             <span class="nav__button-heading">Portfolio</span>
           </li>
         
-          <li class="nav__item" id="about-link" data-location="topright">
+          <li class="nav__item" id="about-link" data-location="topright" data-target="about-content">
             <button class="nav__button">
               <span class="nav__button-circle"></span>
             </button>
             <span class="nav__button-heading">About</span>
           </li>
 
-          <li class="nav__item" id="contact-link" data-location="bottomleft">
+          <li class="nav__item" id="contact-link" data-location="bottomleft" data-target="contact-content">
             <button class="nav__button">
               <span class="nav__button-circle"></span>
             </button>
             <span class="nav__button-heading">Contact</span>
           </li>
           
-          <li class="nav__item" id="blog-link" data-location="bottomright">
+          <li class="nav__item" id="blog-link" data-location="bottomright" data-target="blog-content">
             <button class="nav__button">
               <span class="nav__button-circle"></span>
             </button>
@@ -53,8 +58,11 @@
         </ul>
       
       </nav>
-      <div id="content" class="content">
-        <!-- the content sections related to each of the menu items will live here --> 
+      <div id="content" class="content-frame">
+        <div class="content-section" id="portfolio-content">Portfolio goes here</div>
+        <div class="content-section" id="about-content">About goes here</div>
+        <div class="content-section" id="contact-content">Contact goes here</div>
+        <div class="content-section" id="blog-content">Blog goes here</div>
       </div>
     </main>
     <script src="./scripts/script.js"></script>

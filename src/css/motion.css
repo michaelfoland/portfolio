@@ -19,6 +19,13 @@
     right var(--nav-transition-duration) 0ms ease;
 }
 
+.nav--docked:not(.nav--transition) .nav__button {
+  transition: height var(--nav-transition-duration) 0ms linear,
+    width var(--nav-transition-duration) 0ms linear,
+    top var(--nav-transition-duration) 0ms ease,
+    right var(--nav-transition-duration) 0ms ease;
+}
+
 .nav__button-circle {
   transition: margin var(--circle-transition-duration) 0ms ease,
     width var(--circle-transition-duration) 0ms ease,
@@ -26,22 +33,51 @@
 }
 
 .nav--docked .nav__button-circle {
-  transition: width var(--docked-circle-transition) 0ms ease,
-    height var(--docked-circle-transition) 0ms ease,
-    margin var(--docked-circle-transition) 0ms ease;
+  transition: width var(--docked-circle-transition) 0ms linear,
+    height var(--docked-circle-transition) 0ms linear,
+    margin var(--docked-circle-transition) 0ms linear;
 }
 
 .nav__button-heading {
   transition: transform var(--heading-transition-duration) 0ms ease,
     opacity var(--heading-transition-duration) 0ms ease,
     top var(--heading-transition-duration) 0ms ease,
-    right var(--heading-transition-duration) 0ms ease;
+    right var(--heading-transition-duration) 0ms ease,
+    font-size 150ms 0ms linear;
+}
+
+
+.content-frame {
+  transition: opacity 1000ms 0ms ease,
+}
+
+.content-section {
+  transition: 
+    opacity 1000ms 0ms ease,
+  transform 500ms 200ms linear;
 }
 
 /* it's rawls, going back to the 'original position', get it? */
 @keyframes rawls {
   to {
     transform: rotateZ(0);
+  }
+}
+
+@keyframes fadeInRawls {
+  0% {
+    transform: rotateZ(45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: rotateZ(45deg);    
+  }
+  75% {
+    transform: rotateZ(45deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
   }
 }
 
@@ -52,13 +88,14 @@
   }
 }
 
+
+
 .nav {
   transform: rotateZ(45deg);
   transform-origin: center center;
-  animation-delay: 2100ms;
-  animation-duration: 900ms;
+  animation-duration: 3800ms;
   animation-timing-function: ease;
-  animation-name: rawls;
+  animation-name: fadeInRawls;
   animation-fill-mode: forwards;
 }
 
@@ -73,26 +110,26 @@
 
 .nav__item:nth-of-type(1) > .nav__button {
   transform-origin: center right;
-  animation-delay: 500ms;
+  animation-delay: 800ms;
   z-index: 4;
 }
 
 .nav__item:nth-of-type(2) > .nav__button {
   transform-origin: bottom center;
-  animation-delay: 1000ms;
+  animation-delay: 1300ms;
   z-index: 3;
 }
 
 .nav__item:nth-of-type(3) > .nav__button {
   transform-origin: top center;
   transform: rotateZ(-90deg);
-  animation-delay: 2000ms;
+  animation-delay: 2300ms;
   z-index: 1;
 }
 
 .nav__item:nth-of-type(4) > .nav__button {
   transform-origin: center left;
   transform: rotateZ(-90deg);
-  animation-delay: 1500ms;
+  animation-delay: 1800ms;
   z-index: 2;
 }

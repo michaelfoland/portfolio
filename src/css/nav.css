@@ -1,0 +1,51 @@
+/* ========
+=== NAV ===
+======== */
+
+.nav {
+  position: absolute;
+}
+
+@media (min-width: 600px), (orientation: landscape) {
+  .nav--centered {
+    height: calc(2 * var(--centered-button-height));
+    width: calc(
+      2 * (var(--centered-button-height) + var(--button-heading-width))
+    );
+    right: calc(
+      50% - var(--centered-button-height) - var(--button-heading-width)
+    );
+    top: calc(50% - var(--centered-button-height));
+  }
+
+  /* this is docked on the RIGHT */
+  .nav--docked {
+    height: calc(4 * var(--right-docked-margin-ratio) * var(--docked-button-height));
+    width: var(--right-docked-nav-width);
+    margin-right: 1vw;
+    right: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 599px) and (orientation: portrait) {
+  .nav--centered {
+    height: calc(4 * var(--centered-button-height));
+    width: calc(2 * var(--button-heading-width));
+    right: calc(50% - var(--button-heading-width));
+    top: calc(25% - var(--centered-button-height));
+  }
+
+  /* this is docked at the TOP */
+  .nav--docked {
+    width: calc(
+      4 * var(--docked-button-height) * var(--top-docked-margin-ratio)
+    );
+    height: var(--top-docked-nav-height);
+    padding: 1vmin;
+    top: 0;
+    right: calc(
+      50% - (2 * var(--docked-button-height) * var(--top-docked-margin-ratio))
+    );
+  }
+}

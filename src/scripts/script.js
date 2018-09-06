@@ -182,8 +182,12 @@ function handleClick(e) {
   }
 
   // apply --selected to newly selected nav item
-  e.target.closest(".nav__item").classList.add("nav__item--selected");
+  let newlySelectedItem = e.target.closest('.nav__item');
+  newlySelectedItem.classList.add("nav__item--selected");
 
+  // show corresponding content section
+  showContentSection(newlySelectedItem.dataset.target);
+    
   // apply appropriate changes if we're moving nav from centered to docked
   if (nav.classList.contains("nav--centered")) {
     removeAllHighlights();
@@ -192,11 +196,23 @@ function handleClick(e) {
   }
 }
 
+function showContentSection(sectionId) {
+  // Hidhe currently visible content section
+  let visibleSection = document.querySelector('.content-section--visible');
+  if (visibleSection) {
+    visibleSection.classList.remove('content-section--visible');
+  }
+  
+  document.getElementById(sectionId).classList.add('content-section--visible');
+}
+
+
 function dockNavbar() {
   nav.classList.remove("nav--centered");
   nav.classList.add("nav--docked");
 }
 
+// improve this implementation
 function temporarilyHideButtonHeading() {
   nav.classList.add("nav--transition");
 

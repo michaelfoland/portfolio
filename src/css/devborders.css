@@ -1,0 +1,52 @@
+/* ================
+=== DEV BORDERS ===
+================ */
+
+/*
+body {
+  border: solid 2px red;
+  box-sizing: border-box;
+}
+header {
+  border: solid 2px orange;
+  box-sizing: border-box;
+}
+.main {
+  border: solid 2px yellow;
+  box-sizing: border-box;
+}
+.nav {
+  border: solid 2px green;
+  box-sizing: border-box;
+}
+.nav--docked {
+  border: solid 1px purple;
+}
+.nav__button {
+  border: solid 2px purple;
+  box-sizing: border-box;
+}
+.nav__button-circle {
+  border: solid 2px pink;
+  box-sizing: border-box;
+}
+.nav__button-heading {
+  border: solid 2px brown;
+  box-sizing: border-box;
+}
+.nav__item {
+  border: solid 2px blue;
+  box-sizing: border-box;
+}
+
+*/
+
+.content {
+  border: solid 2px purple;
+  box-sizing: border-box;
+}
+
+.content-section {
+  border: solid 1px lightgreen;
+  box-sizing: border-box;
+}

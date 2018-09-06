@@ -1,0 +1,99 @@
+/* ==============
+=== NAV__ITEM ===
+============== */
+
+.nav__item {
+  position: absolute;
+  /* display: flex; */
+}
+
+@media (min-width: 600px), (orientation: landscape) {
+  .nav--docked .nav__item {
+    height: calc(var(--docked-button-height) * 1.1);
+    width: calc(
+      var(--docked-button-height) + var(--top-docked-button-heading-width)
+    );
+    right: 0;
+    vertical-align: middle; /* test */
+  }
+
+  .nav--docked .nav__item:nth-of-type(1) {
+    top: 0%;
+  }
+
+  .nav--docked .nav__item:nth-of-type(2) {
+    top: calc(var(--docked-button-height) * var(--right-docked-margin-ratio));
+  }
+
+  .nav--docked .nav__item:nth-of-type(3) {
+    top: calc(
+      var(--docked-button-height) * var(--right-docked-margin-ratio) * 2
+    );
+  }
+
+  .nav--docked .nav__item:nth-of-type(4) {
+    top: calc(
+      var(--docked-button-height) * var(--right-docked-margin-ratio) * 3
+    );
+  }
+}
+
+@media (max-width: 599px) and (orientation: portrait) {
+  .nav--docked .nav__item {
+    width: calc(var(--docked-button-height) * var(--top-docked-margin-ratio));
+    height: calc(
+      var(--docked-button-height) + var(--docked-button-heading-height)
+    );
+  }
+
+  .nav--docked .nav__item {
+    top: 0;
+  }
+
+  .nav--docked .nav__item:nth-of-type(1) {
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 3
+    );
+  }
+
+  .nav--docked .nav__item:nth-of-type(2) {
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 2
+    );
+  }
+
+  .nav--docked .nav__item:nth-of-type(3) {
+    right: calc(
+      var(--docked-button-height) * var(--top-docked-margin-ratio) * 1
+    );
+  }
+
+  .nav--docked .nav__item:nth-of-type(4) {
+    right: 0%;
+  }
+}
+
+.nav--centered .nav__item {
+  height: 50%;
+  width: 50%;
+}
+
+.nav--centered .nav__item:nth-of-type(1) {
+  top: 0%;
+  right: 50%;
+}
+
+.nav--centered .nav__item:nth-of-type(2) {
+  top: 0%;
+  right: 0%;
+}
+
+.nav--centered .nav__item:nth-of-type(3) {
+  top: 50%;
+  right: 50%;
+}
+
+.nav--centered .nav__item:nth-of-type(4) {
+  top: 50%;
+  right: 0%;
+}
