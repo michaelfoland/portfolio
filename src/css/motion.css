@@ -54,7 +54,7 @@
 .content-section {
   transition: 
     opacity 1000ms 0ms ease,
-  transform 500ms 200ms linear;
+    transform 500ms 200ms linear;
 }
 
 /* it's rawls, going back to the 'original position', get it? */

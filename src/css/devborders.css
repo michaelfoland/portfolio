@@ -41,7 +41,12 @@ header {
 
 */
 
-.content {
+.main {
+  border: solid 2px yellow;
+  box-sizing: border-box;
+}
+
+.content-frame {
   border: solid 2px purple;
   box-sizing: border-box;
 }
